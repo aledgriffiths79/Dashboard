@@ -1,3 +1,6 @@
+<!-- this html page is only for "select discipline" and "#discipline-selector" to be tested to be positioned in the middle of the page. 
+My experiment for understanding. using 2 bootstrap versions, 3.3.7 and v4-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,27 +9,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gender In Academia</title>
     
-    <link rel="stylesheet" href="discipline-selector/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="discipline-selector/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="layout/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="layout/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="layout/css/style.css" type="text/css" />
     
-    <script type="text/javascript" src="discipline-selector/js/d3.min.js"></script>
-    <script type="text/javascript" src="discipline-selector/js/crossfilter.min.js"></script>
-    <script type="text/javascript" src="discipline-selector/js/dc.min.js"></script>
-    <script type="text/javascript" src="discipline-selector/js/queue.min.js"></script>
-    <script type="text/javascript" src="discipline-selector/js/graph.js"></script>
+    
+    <script type="text/javascript" src="layout/js/d3.min.js"></script>
+    <script type="text/javascript" src="layout/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="layout/js/dc.min.js"></script>
+    <script type="text/javascript" src="layout/js/queue.min.js"></script>
+    <script type="text/javascript" src="layout/js/graph.js"></script>
 
 </head>
+
+
 <body>
     
-    <h1>Gender In Academia</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Gender in Academia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
     
-    <div id="discipline-selector"></div>
+    <div class="container">
+        
+        <div class="row">
+            <h1>Gender In Academia</h1>
+        </div>
+        <div class="row"> <!-- this following code is used with syntax from bootstrap 4 -->
+            <div class="offset-md-5 col-md-2">Select Discipline</div>
+        </div>
+        <div class="row">
+            <div class="offset-md-5 col-md-2" id="discipline-selector"></div>
+        </div>
+             <!-- in the below is the same as above but its for bootstrap 3.3.7 -->   
+        <!--<div class="row">
+                <div class="col-md-offset-5">Select Discipline</div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-5" id="discipline-selector"></div>
+            </div> -->
+
+        <div class="row">
+            <div class="col-md-5">Less than half of the female academics in the study are professors.</div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">A majority of the male academics are at the professor level.</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 number-box" id="percent-of-women-professors"></div>
+            <div class="col-md-6 number-box" id="percent-of-men-professors"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4">Men outnumber women 10 to 1</div>
+            <div class="col-md-4">Men earn on average 10% more</div>
+            <div class="col-md-4">Distribution of ranks is weighted towards the upper level for men.</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" id="gender-balance"></div>
+            <div class="col-md-4" id="average-salary"></div>
+            <div class="col-md-4" id="rank-distribution"></div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-offset-2">There appears to be little or no correlation between salary and years of service.</div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2" id="service-salary"></div>
+        </div>
     
-    <div id="gender-balance"></div>
     
-    <div id="average-salary"></div>
+        <div class="row">
+            <div class="col-md-offset-2">There is a very lose correlation between salary and years since receiving a PhD.</div>
+        </div>
+        <div class="row">
+            <div  class="col-md-offset-2" id="phd-salary"></div>
+        </div>
+    </div>
+    
 </body>
 </html>
-
-
-
